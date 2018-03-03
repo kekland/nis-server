@@ -1,0 +1,33 @@
+{
+  "name": "nis-server",
+  "version": "1.0.0",
+  "description": "Server and API for NIS database",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "koa": "^2.5.0",
+    "unirest": "^0.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kekland/nis-server.git"
+  },
+  "keywords": [
+    "api",
+    "nis",
+    "server"
+  ],
+  "author": "kekland (kk.erzhan@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kekland/nis-server/issues"
+  },
+  "homepage": "https://github.com/kekland/nis-server#readme"
+}
