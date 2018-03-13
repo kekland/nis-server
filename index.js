@@ -16,7 +16,7 @@ const port = process.env.PORT || 5000
 app.set('port', port)
 
 // Enable cross-domain sharing
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
 
 app.use((request, response, next) => {
@@ -42,6 +42,15 @@ app.post('/Login/', (request, response) => {
 })
 
 app.post('/GetImkoSubjects/', (request, response) => {
+	imkoSubject.getAllSubjects(request.body)
+		.then(result => {
+			response.status(200).send(JSON.stringify(result))
+		})
+		.catch(err => {
+			response.status(400).send(JSON.stringify(err))
+		})
+})
+app.post('/GetImkoSubjectOnQuarter/', (request, response) => {
 	let data = {}
 	if (request.body.quarter) {
 		data.quarter = request.body.quarter
@@ -57,7 +66,7 @@ app.post('/GetImkoSubjects/', (request, response) => {
 		})
 		.catch(err => {
 			response.status(400).send(JSON.stringify(err))
-	})
+		})
 })
 
 app.post('/GetImkoGoals/', (request, response) => {

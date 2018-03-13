@@ -43,6 +43,10 @@ function getRoles(data) {
 						selectedRole = role;
 						break;
 					}
+					else if (role.value === 'SchoolDirector') {
+						selectedRole = role;
+						break;
+					}
 				}
 				if (selectedRole !== undefined) {
 					resolve({ role: selectedRole, roles: result.response.listRole })

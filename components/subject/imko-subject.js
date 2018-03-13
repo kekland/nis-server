@@ -3,6 +3,15 @@ let globalData = require('../data');
 let unirest = require('unirest')
 let account = require('../login/account')
 
+function getAllSubjects(user) {
+
+	let promiseChain = []
+
+	for (let quarter = 1; quarter <= 4; quarter++) {
+		promiseChain.push(getSubjects(user, { quarter: quarter }))
+	}
+	return Promise.all(promiseChain)
+}
 function getSubjects(user, data) {
 	return new Promise((resolve, reject) => {
 		let requestData = {
@@ -55,3 +64,4 @@ function getSubjects(user, data) {
 }
 
 module.exports.getSubjects = getSubjects
+module.exports.getAllSubjects = getAllSubjects
